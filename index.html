@@ -39,57 +39,15 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 
 .cd-num{font-family:'Bebas Neue',cursive;font-size:1.3rem;color:var(--gold);line-height:1;}
 .cd-lbl{font-size:.5rem;letter-spacing:.15em;color:rgba(240,244,255,0.4);text-transform:uppercase;}
-
 .ticker-wrap{background:white;border-bottom:1px solid rgba(0,200,255,0.15);overflow:hidden;padding:5px 0;position:relative;z-index:5;}
 
-.ticker{
-display:inline-flex;
-align-items:center;
-white-space:nowrap;
-padding-left:20px;
-animation:scroll-ticker 55s linear infinite;
-font-size:.68rem;
-font-weight:700;
-letter-spacing:.08em;
-color:blue;
-gap:14px;
-will-change:transform;
-}
+.ticker{display:inline-block;white-space:nowrap;animation:scroll-ticker 30s linear infinite;font-size:.68rem;font-weight:700;letter-spacing:.08em;color:blue;padding-left:100%;}
+@keyframes scroll-ticker{from{transform:translateX(0);}to{transform:translateX(-100%);}}
 
 .ticker .sep{color:var(--gold);margin:0 14px;}
 
 .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#070E1D;border-top:1px solid rgba(255,215,0,0.2);display:flex;z-index:200;padding-bottom:env(safe-area-inset-bottom,0px);}
-.bnav-btn{
-flex:1.2;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-padding:8px 4px 6px;
-cursor:pointer;
-border:none;
-background:transparent;
-color:rgba(240,244,255,0.35);
-font-family:'Montserrat',sans-serif;
-font-size:.52rem;
-font-weight:700;
-letter-spacing:.08em;
-text-transform:uppercase;
-gap:3px;
-transition:color 0.2s;
-}
-
-@media(max-width:480px){
-.bnav-btn{
-font-size:.45rem;
-padding:6px 2px 5px;
-}
-
-.bnav-btn .ico{
-font-size:1rem;
-}
-}
-
+.bnav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 4px 6px;cursor:pointer;border:none;background:transparent;color:rgba(240,244,255,0.35);font-family:'Montserrat',sans-serif;font-size:.52rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;gap:3px;transition:color 0.2s;}
 .bnav-btn .ico{font-size:1.3rem;line-height:1;}
 .bnav-btn.active{color:var(--gold);}
 .bnav-btn.active .ico{filter:drop-shadow(0 0 6px rgba(255,215,0,0.6));}
@@ -168,9 +126,7 @@ table.pos-table tr:last-child td{border-bottom:none;}
 .cl3{background:rgba(0,230,118,0.03);}
 .leyenda{font-size:.58rem;color:white;padding:6px 4px 12px;display:flex;gap:14px;flex-wrap:wrap;}
 .ley-dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:4px;}
-
-.elim-info{background:rgba(0,200,255,0.07);border:1px solid rgba(0,200,255,0.2);border-radius:10px;padding:10px;margin-bottom:14px;font-size:.62rem;color:var(--accent);line-height:1.5;white-space:normal;word-break:break-word;overflow-wrap:break-word;}
-
+.elim-info{background:rgba(0,200,255,0.07);border:1px solid rgba(0,200,255,0.2);border-radius:10px;padding:12px;margin-bottom:14px;font-size:.75rem;color:var(--accent);line-height:1.5;}
 .elim-scroll{overflow-x:auto;padding-bottom:10px;}
 .bracket{display:flex;gap:10px;min-width:800px;padding:4px;}
 .round-col{display:flex;flex-direction:column;min-width:130px;}
@@ -332,17 +288,10 @@ z-index:99999;
 }
 @media(max-width:480px){
   .pub-top{padding:5px 8px;gap:6px;}
-.fixture-tabla{font-size:.6rem;}
-  .fixture-tabla td{padding:5px 2px;}
-  .fixture-tabla .ft-score{font-size:.9rem;min-width:28px;}
-  .fixture-tabla .ft-vs{font-size:.75rem;}
-  .fixture-grupo-bloque{margin-bottom:6px;}
-  .fixture-grupo-header{padding:5px 10px;}
-  .fixture-grupo-letra{font-size:1.1rem;}
 }
 
 /* ===== FIXTURE COMPACTO EN TABLA ===== */
-.fixture-tabla{width:100%;border-collapse:collapse;font-size:clamp(.58rem,.9vw,.75rem);}
+.fixture-tabla{width:100%;border-collapse:collapse;font-size:.75rem;}
 .fixture-tabla thead th{
   padding:5px 4px;
   font-size:.55rem;
@@ -361,7 +310,7 @@ z-index:99999;
 .fixture-tabla tbody tr:last-child{border-bottom:none;}
 .fixture-tabla tbody tr:hover{background:rgba(255,255,255,0.05);}
 .fixture-tabla tbody tr.jugado{border-left:3px solid var(--green);}
-.fixture-tabla td{padding:3px 2px;text-align:center;vertical-align:middle;}
+.fixture-tabla td{padding:7px 4px;text-align:center;vertical-align:middle;}
 .fixture-tabla td.local{text-align:right;padding-right:6px;}
 .fixture-tabla td.visit{text-align:left;padding-left:6px;}
 .fixture-tabla .ft-flag{font-size:.9rem;display:inline-flex;align-items:center;gap:4px;}
@@ -409,12 +358,6 @@ z-index:99999;
 }
 .fixture-grupo-sub{font-size:.58rem;letter-spacing:.12em;color:rgba(240,244,255,0.35);text-transform:uppercase;}
 
-/* ===== LOGO GRANDE EN CELULAR ===== */
-@media(max-width:480px){
-.ticker img{
-height:28px !important;}
-}
-
 @keyframes flotarBandera{
 
 0%{
@@ -438,160 +381,68 @@ transform:rotate(0deg);
 }
 }
 
-/* ===== BANNER SIMPLE ===== */
-
-.banner-publicidad{
-height:80px;
-background:#000;
-border-bottom:1px solid rgba(255,215,0,0.15);
-overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:0 8px;
-}
-
-.banner-slider{
-display:flex;
-width:100%;
-height:100%;
-align-items:center;
-justify-content:center;
-position:relative;
-}
-
-.banner-page{
-display:none;
-width:100%;
-height:100%;
-align-items:center;
-justify-content:center;
-gap:16px;
-}
-
-.banner-page.active{
-display:flex;
-}
-
-.banner-page img{
-height:60px;
-width:auto;
-max-width:22%;
-object-fit:contain;
-border-radius:8px;
-}
-
-/* MOBILE */
-@media(max-width:480px){
-
-.banner-publicidad{
-height:72px;
-}
-
-.banner-page{
-gap:8px;
-}
-
-.banner-page img{
-height:46px;
-max-width:23%;
-}
-}
-
-@keyframes scroll-ticker{
-0%{
-transform:translateX(0);
-}
-100%{
-transform:translateX(-50%);
-}
-}
-
 </style>
 </head>
 <body>
 
-<!-- ======================================================-->
-   <!-  PUBLICIDAD — EDITÁ AQUÍ TU NOMBRE, SLOGAN Y CONTACTO-->
-   <!-  ====================================================== -->
-<div style="position:sticky;top:0;z-index:299;background:linear-gradient(90deg,#0A1500,#142200,#0A1500);border-bottom:1px solid rgba(100,200,0,0.25);padding:6px 16px;text-align:center;">
-
-  <div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0;">
-
-<!-- ======= HEADER ======= -->
-<div class="header" style="width:100vw;margin-left:calc(50% - 50vw);border-radius:0;">
+<!-- ======================================================
+     PUBLICIDAD — EDITÁ AQUÍ TU NOMBRE, SLOGAN Y CONTACTO
+     ====================================================== -->
+<div class="header">
   <div class="header-top">
-
-  <div class="trophy">🏆</div>
+    <div class="trophy">🏆</div>
     <div>
       <h1>COPA MUNDIAL FIFA 2026</h1>
-      
+      <div class="header-sub">Vamos ARGENTINA!!!</div>
     </div>
    
- <!-- ======= CONTADOR ======= -->
+ 
   <div class="countdown-bar">
     <div class="cd-box"><div class="cd-num" id="cd-d">--</div><div class="cd-lbl">días</div></div>
     <div class="cd-box"><div class="cd-num" id="cd-h">--</div><div class="cd-lbl">hs</div></div>
     <div class="cd-box"><div class="cd-num" id="cd-m">--</div><div class="cd-lbl">min</div></div>
     <div class="cd-box"><div class="cd-num" id="cd-s">--</div><div class="cd-lbl">seg</div></div>
   </div> 
-
-<img src="bandera.jfif"style="height:42px;border-radius:4px;margin-right:4px;animation:flotarBandera 2.5s ease-in-out infinite;transform-origin:left center;">
-
+<img src="bandera.jfif" style="
+height:30px;
+border-radius:3px;
+animation:flotarBandera 3s ease-in-out infinite;
+transform-origin:left center;
+">
   </div>
 </div>
-    
+
+
 <!-- ======= Cartel ECO en pantalla ======= -->
-<div style="
-background:linear-gradient(90deg,#0A1500,#142200,#0A1500);
-border:1px solid rgba(100,200,0,0.2);
-padding:2px 10px;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10px;
-margin-bottom:1px;
-width:100vw;
-margin-left:calc(50% - 50vw);
-border-radius:0;
-">
+<div style="background:linear-gradient(90deg,#0A1500,#142200,#0A1500);border:1px solid rgba(100,200,0,0.2);padding:1px 16px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:8px;margin-bottom:1px;">
   <div style="text-align:center">
     <div style="font-family:'Bebas Neue',cursive;font-size:1.2rem;color:#7FE000;letter-spacing:.15em;">FIXTURE DIGITAL · SIN PAPEL 🌿</div>
     <div style="font-size:.75rem;color:#7FE000;letter-spacing:.2em;">Compartí con todos · Cuidamos el planeta juntos</div>
   </div>
-</div>  
-
-<!-- ======= BANNER PUBLICITARIO======= -->
-<div class="banner-publicidad">
-
-  <div class="banner-slider">
-
-    <div class="banner-page active">
-      <img src="logo_macla.png">
-      <img src="bembo.png">
-      <img src="antartida.png">
-      <img src="union.png">
-    </div>
-
-    <div class="banner-page">
-      <img src="avda.png">
-      <img src="unioncenter.png">
-      <img src="pent.png">
-      <img src="annet.png">
-    </div>
-
-    <div class="banner-page">
-      <img src="barzetta.png">
-      <img src="agustini.png">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg">
-      <img src="bembo.png">
-    </div>
-
-  </div>
-
 </div>
 
+<div style="position:sticky;top:0;z-index:299;background:linear-gradient(90deg,#0A1500,#142200,#0A1500);border-bottom:1px solid rgba(100,200,0,0.25);padding:6px 16px;text-align:center;">
 
+<div style="overflow:hidden;height:80px;background:#000;position:relative;border-bottom:1px solid rgba(255,215,0,0.15);">
+  <div id="banner-imgs" style="display:flex;height:100%;align-items:center;animation:slide-banner 20s linear infinite;width:max-content;">
+    <!-- Acá van tus imágenes de sponsors -->
+    <img src="logo_macla.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
+    <img src="bembo.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
+    <img src="antartida.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
+    <img src="union.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
+    <img src="avda.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
+<img src="unioncenter.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
+<img src="pent.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
+<img src="annet.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
+<img src="barzetta.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
+<img src="agustini.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
+<!-- Repetir para que no quede vacío -->
+
+  </div>
+</div>
+</div>   
+  </div>
+</div>
 
 <!-- PANTALLA DE INGRESO -->
 <div id="pantalla-ingreso" style="position:fixed;inset:0;background:rgba(5,10,20,0.97);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;">
@@ -627,34 +478,26 @@ border-radius:0;
     🔴 INICIO: 11 JUN · México 🇲🇽 vs Sudáfrica 🇿🇦 · Estadio Azteca
     <span class="sep">⚽</span>
 
-<img src="copa78.png"style="height:26px;vertical-align:middle;margin:0 10px;border-radius:4px;">
-<img src="copa86.png"style="height:26px;vertical-align:middle;margin:0 10px;border-radius:4px;">
-<img src="copa2022.png"style="height:26px;vertical-align:middle;margin:0 10px;border-radius:4px;">
-VAMOS POR LA 4ta.🏆 
+<img src="copa78.png"style="height:30px;vertical-align:middle;margin:0 10px;border-radius:4px;">
+<img src="copa86.png"style="height:30px;vertical-align:middle;margin:0 10px;border-radius:4px;">
+<img src="copa2022.png"style="height:30px;vertical-align:middle;margin:0 10px;border-radius:4px;">
+VAMOS POR LA 4ta. 🏆 !!! 
  <span class="sep">⚽</span>  FINAL: 19 JUL · MetLife Stadium · Nueva Jersey
    <span class="sep">⚽</span> ⚡ Fixture Digital 2026 * Sincronizado por MACLA-IA 
     <span class="sep">⚽</span>
   </div>
 </div>
 
-<!-- FIXTURE -->
+
+<!-- PESTAÑA FIXTU -->
 <div class="content">
-
   <div class="section active" id="sec-fixture">
-
     <div class="sec-title">FIXTURE</div>
-
-    <div class="sec-sub" style="color:#7FE000;">
-      Tocá un partido para cargar el resultado ⚽
-    </div>
-
+    <div class="sec-sub">Tocá un partido para cargar el resultado ⚽</div>
     <div class="filter-tabs" id="filter-tabs"></div>
-
     <div class="partidos-list" id="partidos-list"></div>
-
   </div>
 
-<!-- POSICIONES -->
   <div class="section" id="sec-posiciones">
     <div class="sec-title">POSICIONES</div>
     <div class="sec-sub">Se actualiza automáticamente al cargar resultados</div>
@@ -666,7 +509,6 @@ VAMOS POR LA 4ta.🏆
     <div id="posiciones-list"></div>
   </div>
 
-<!-- LLAVES -->
   <div class="section" id="sec-elim">
     <div class="sec-title">ELIMINATORIAS</div>
     <div class="sec-sub">16avos · 8tavos · Cuartos · Semis · Final</div>
@@ -676,9 +518,8 @@ VAMOS POR LA 4ta.🏆
     </div>
   </div>
 
-<!-- INFO -->
   <div class="section" id="sec-info">
-    <div class="sec-title">INFO MUNDIAL: USA*México*Canadá</div>
+    <div class="sec-title">INFO MUNDIAL</div>
     <div class="sec-sub">Todo sobre la Copa del Mundo 2026</div>
     <div class="info-grid">
       <div class="info-card"><div class="info-num">48</div><div class="info-lbl">Selecciones</div></div>
@@ -722,11 +563,16 @@ VAMOS POR LA 4ta.🏆
     <div class="sec-title">🎯 PRONÓSTICO</div>
     <div class="sec-sub">Adiviná los 2 equipos finalistas y el campeón del mundo</div>
 
+
+
     <!-- CARD INSCRIPCION -->
     <div style="background:linear-gradient(135deg,rgba(255,107,53,0.12),rgba(255,215,0,0.08));border:1px solid rgba(255,107,53,0.35);border-radius:16px;padding:16px;margin-bottom:14px;">
       <div style="font-family:'Bebas Neue',cursive;font-size:1.1rem;color:#FF6B35;letter-spacing:.12em;margin-bottom:4px;">⏰ INSCRIPCIÓN ABIERTA HASTA EL 13 Julio</div>
       <div style="font-size:.9rem;color:white;line-height:1.5;">Completá tu pronóstico antes de que jueguen los partidos de semis. Solo podés hacer tu pronóstico una vez. Los premios se anuncian próximamente.</div>
+
     </div>
+
+
 
 <!-- BOTONES DE PREMIOS -->
 <div style="display:flex;gap:10px;margin-bottom:16px;">
@@ -748,6 +594,7 @@ VAMOS POR LA 4ta.🏆
     <span style="font-size:1.8rem">🏆</span>
     PREMIO<br>CAMPEÓN
   </button>
+
 </div>
 
 <!-- MODAL PREMIOS -->
@@ -837,9 +684,11 @@ cursor:pointer;">
 </div>          
 
         </div>
+
         <button onclick="guardarPronostico()" style="background:linear-gradient(135deg,#FF6B35,#FF9500);color:#000;font-family:'Bebas Neue',cursive;font-size:1.2rem;letter-spacing:.15em;padding:16px;border:none;border-radius:12px;cursor:pointer;margin-top:6px;width:100%;">
           🎯 ENVIAR MI PRONÓSTICO
         </button>
+
       </div>
     </div>
 
@@ -848,7 +697,8 @@ cursor:pointer;">
       <div style="font-size:3rem;margin-bottom:8px;">✅</div>
       <div style="font-family:'Bebas Neue',cursive;font-size:1.5rem;color:var(--green);letter-spacing:.1em;margin-bottom:6px;">¡PRONÓSTICO REGISTRADO!</div>
       <div id="conf-detalle" style="font-size:.8rem;color:rgba(240,244,255,0.6);line-height:1.7;margin-bottom:14px;"></div>
-</div>      
+</div>
+      
 
     <!-- RESET -->
     <div style="margin-top:30px;border-top:1px solid rgba(255,255,255,0.06);padding-top:20px;">
@@ -897,7 +747,6 @@ cursor:pointer;">
 <div class="toast" id="toast"></div>
 
 <script>
-
 let CURRENT_MATCHES = {};
 let PRONOSTICOS_ABIERTOS = true;
 
@@ -930,6 +779,7 @@ function checkIngreso(){
           data.nombre.toUpperCase() +
           '</span><span class="sep">⚽</span>' +
           ticker.innerHTML;
+
       }
 
     }catch(e){
@@ -941,6 +791,9 @@ function checkIngreso(){
 
   document.getElementById('pantalla-ingreso').style.display = 'none';
 }
+
+
+ 
 
 function registrarIngreso(){
 
@@ -1308,6 +1161,7 @@ function mejoresTerceros(){
 
   // mejores 8
   return terceros.slice(0,8);
+
 }
 
 // ============================================================
@@ -1793,24 +1647,35 @@ html += `
 }
 
 function getTercerosDisponibles(){
+
   const terceros=[];
+
   GRUPOS.forEach(function(g){
+
     const tabla=sortedGroup(g.id);
+
     if(
       tabla[2] &&
       tabla[2].j > 0
     ){
       terceros.push(tabla[2].name);
     }
+
   });
+
   return terceros;
 }
 
 function seleccionarTercero(matchId){
+
   const terceros = getTercerosDisponibles();
+
   let lista='';
+
   terceros.forEach(function(t,i){
+
     lista += (i+1)+'. '+t+'\n';
+
   });
 
   const elegido = prompt(
@@ -2103,17 +1968,6 @@ function actualizarEstadoPronosticos(){
   }
 }
 
-(function(){
-  const bannerPages = document.querySelectorAll('.banner-page');
-  if(!bannerPages.length) return;
-  let bannerIndex = 0;
-  setInterval(function(){
-    bannerPages[bannerIndex].classList.remove('active');
-    bannerIndex = (bannerIndex + 1) % bannerPages.length;
-    bannerPages[bannerIndex].classList.add('active');
-  }, 3500);
-})();
-
 // ============================================================
 // INIT
 // ============================================================
@@ -2123,7 +1977,6 @@ renderFixture();
 actualizarEstadoPronosticos();
 
 checkIngreso();
-
 
 </script>
 </body>
