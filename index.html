@@ -435,20 +435,18 @@ transform:rotate(0deg);
      ====================================================== -->
 <div class="header">
   <div class="header-top">
-    <div class="trophy">🏆</div>
-    <div>
-      <h1>COPA MUNDIAL FIFA 2026</h1>
-      <div style="text-align:center;font-family:'Bebas Neue',cursive;font-size:1.1rem;letter-spacing:.25em;color:#74ACDF;text-shadow:0 0 8px rgba(116,172,223,0.8),0 0 20px rgba(116,172,223,0.4);animation:argentina-pulse 1.8s ease-in-out infinite;margin:6px 0;"> VAMOS ARGENTINA...!!!</div>
+    <div class="trophy" style="font-size:1.6rem;">🏆</div>
+    <div style="flex:1;text-align:center;">
+      <h1 style="font-size:clamp(1rem,5vw,1.8rem);line-height:1;">COPA MUNDIAL FIFA 2026</h1>
+      <div style="font-family:'Bebas Neue',cursive;font-size:clamp(.65rem,3vw,.95rem);letter-spacing:.15em;color:#74ACDF;animation:argentina-pulse 1.8s ease-in-out infinite;white-space:nowrap;">VAMOS ARGENTINA...!!!</div>
     </div>
-   
- 
-  <div class="countdown-bar">
+    <img src="bandera.jfif" style="height:30px;border-radius:3px;animation:flotarBandera 3s ease-in-out infinite;transform-origin:left center;">
+  </div>
+  <div class="countdown-bar" style="justify-content:center;margin-top:6px;">
     <div class="cd-box"><div class="cd-num" id="cd-d">--</div><div class="cd-lbl">días</div></div>
     <div class="cd-box"><div class="cd-num" id="cd-h">--</div><div class="cd-lbl">hs</div></div>
     <div class="cd-box"><div class="cd-num" id="cd-m">--</div><div class="cd-lbl">min</div></div>
     <div class="cd-box"><div class="cd-num" id="cd-s">--</div><div class="cd-lbl">seg</div></div>
-  </div> 
-<img src="bandera.jfif" style="height:30px;border-radius:3px;animation:flotarBandera 3s ease-in-out infinite;transform-origin:left center;">
   </div>
 </div>
 
@@ -461,13 +459,14 @@ transform:rotate(0deg);
   </div>
 </div>
 
-<div style="position:sticky;top:0;z-index:299;background:linear-gradient(90deg,#0A1500,#142200,#0A1500);border-bottom:1px solid rgba(100,200,0,0.25);padding:6px 16px;text-align:center;">
+<div style="position:sticky;top:0;z-index:299;background:linear-gradient(90deg,#0A1500,#142200,#0A1500);border-bottom:1px solid rgba(100,200,0,0.25);padding:1px 16px;text-align:center;">
 
 <div class="banner-pub">
+
+<div style="text-align:center;font-family:'Bebas Neue',cursive;font-size:.8rem;letter-spacing:.15em;color:#53EAFD;padding:1px;text-shadow:0 0 1px rgba(116,172,223,0.8),0 0 5px rgba(116,172,223,0.4);animation:argentina-pulse 1.8s ease-in-out infinite;margin:6px 0;"> COMERCIOS QUE APOYAN EL CUIDADO DEL PLANETA</div>
   <!-- Página 1 -->
   <div class="banner-pagina activa">
     <img src="bembo.png" alt="Bembo">
-    <img src="publica.png" alt="Publica">
     <img src="union.png" alt="Unión">
     <img src="avda.png" alt="Avda">
 <img src="logo_macla.png" alt="Macla-IA">
@@ -478,19 +477,16 @@ transform:rotate(0deg);
     <img src="publica.png" alt="Publica">
     <img src="annet.png" alt="An-Net">
     <img src="barzetta.png" alt="Barzetta">
-<img src="logo_macla.png" alt="Macla-IA">
   </div>
   <!-- Página 3 -->
   <div class="banner-pagina">
     <img src="agustini.png" alt="Agustini">
     <img src="redsport.png" alt="Red Sport">
     <img src="publica.png" alt="Publica">
-<img src="publica.png" alt="Publica">
     <img src="master.png" alt="Master">
   </div>
   <!-- Agregá más páginas de 4 acá -->
 <div class="banner-pagina">
-    <img src="publica.png" alt="Publica">
     <img src="pent.png" alt="Pent">
     <img src="publica.png" alt="Publica">
 <img src="ferresanmartin.png" alt="Ferre SanMartin">
@@ -501,7 +497,6 @@ transform:rotate(0deg);
 <img src="mundoanimal.png" alt="Mund Anim">
 <img src="publica.png" alt="Publica">
 <img src="antartida.png" alt="antartida">
-<img src="publica.png" alt="Publica">
   </div>
 
 </div>
@@ -866,7 +861,7 @@ function checkIngreso(){
       if(ticker){
 
         ticker.innerHTML =
-          '<span class="user-ticker">👋 BIENVENIDO ' +
+          '<span class="user-ticker">👋 BIENVENIDO/A ' +
           data.nombre.toUpperCase() +
           '</span><span class="sep">⚽</span>' +
           ticker.innerHTML;
@@ -956,7 +951,7 @@ localStorage.setItem('usuario', JSON.stringify({nombre}));
   if(!ticker.innerHTML.includes(nombre.toUpperCase())){
 
     ticker.innerHTML =
-      '<span class="user-ticker">👋 BIENVENIDO ' +
+      '<span class="user-ticker">👋 BIENVENIDO/A ' +
       nombre.toUpperCase() +
       '</span><span class="sep">⚽</span>' +
       ticker.innerHTML;
@@ -977,7 +972,7 @@ function mostrarFranjaBienvenida(nombre){
   franja.id = 'franja-bienvenida';
 
   franja.innerHTML =
-    '🇦🇷 BIENVENIDO <b>' +
+    '🇦🇷 BIENVENIDO/A <b>' +
     nombre.toUpperCase() +
     '</b>';
 
