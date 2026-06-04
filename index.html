@@ -6,7 +6,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Mundial 2026">
 <meta name="theme-color" content="#050A14">
-<title>Fixture Digital Mundial 2026</title>
+<title>Fixture Digital FIFA 26 MACLA-IA</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
 :root{--gold:#FFD700;--gold2:#FFA500;--dark:#050A14;--dark2:#0A1628;--accent:#00C8FF;--green:#00E676;--red:#FF4545;--glass:rgba(255,255,255,0.05);--glass2:rgba(255,255,255,0.09);--white:#F0F4FF;--radius:14px;}
@@ -29,7 +30,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .trophy{font-size:1.6rem;animation:glow 2s ease-in-out infinite alternate;}
 @keyframes glow{from{filter:drop-shadow(0 0 6px rgba(255,215,0,0.4));}to{filter:drop-shadow(0 0 18px rgba(255,215,0,0.9));}}
 
-.header h1{font-family:'Bebas Neue',cursive;font-size:1.5rem;background:linear-gradient(135deg,var(--gold),#fff,var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.06em;line-height:1;}
+.header h1{font-family:'Bebas Neue',cursive;font-size:1.2rem;background:linear-gradient(135deg,var(--gold),#fff,var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.06em;line-height:1;}
 
 .header-sub{font-size:.6rem;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-top:3px;}
 
@@ -217,8 +218,6 @@ letter-spacing:.1em;
 opacity:0;
 transition:all .3s;
 z-index:99999;
-
-
 }
 
 /* =========================
@@ -314,6 +313,8 @@ z-index:99999;
 .fixture-tabla td.local{text-align:right;padding-right:6px;}
 .fixture-tabla td.visit{text-align:left;padding-left:6px;}
 .fixture-tabla .ft-flag{font-size:.9rem;display:inline-flex;align-items:center;gap:4px;}
+.ft-flag{display:inline-flex;align-items:center;gap:5px;vertical-align:middle;}
+.ft-flag img{width:22px;height:16px;border-radius:2px;object-fit:cover;flex-shrink:0;}
 .fixture-tabla .ft-score{
   font-family:'Bebas Neue',cursive;
   font-size:1.1rem;
@@ -359,26 +360,70 @@ z-index:99999;
 .fixture-grupo-sub{font-size:.58rem;letter-spacing:.12em;color:rgba(240,244,255,0.35);text-transform:uppercase;}
 
 @keyframes flotarBandera{
-
 0%{
 transform:rotate(0deg);
 }
-
 25%{
 transform:rotate(1.5deg);
 }
-
 50%{
 transform:rotate(-1.5deg);
 }
-
 75%{
 transform:rotate(1deg);
 }
-
 100%{
 transform:rotate(0deg);
 }
+}
+
+@keyframes argentina-pulse{
+  0%,100%{
+    text-shadow:0 0 6px rgba(116,172,223,0.6),0 0 14px rgba(116,172,223,0.3);
+    letter-spacing:.25em;
+  }
+  50%{
+    text-shadow:0 0 14px rgba(116,172,223,1),0 0 30px rgba(116,172,223,0.6),0 0 50px rgba(116,172,223,0.3);
+    letter-spacing:.3em;
+  }
+}
+
+@keyframes brillo-texto{
+  0%{background-position:0% center;}
+  100%{background-position:300% center;}
+}
+
+.banner-pub{
+  background:#000;
+  border-top:1px solid rgba(255,215,0,0.15);
+  border-bottom:1px solid rgba(255,215,0,0.15);
+  padding:6px 10px;
+  height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.banner-pagina{
+  display:none;
+  width:100%;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+  animation:fade-banner .5s ease;
+}
+.banner-pagina.activa{display:flex;}
+@keyframes fade-banner{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+.banner-pagina img{
+  height:62px;
+  width:auto;
+  object-fit:contain;
+  border-radius:6px;
+  background:transparent;
+  padding:1px;
 }
 
 </style>
@@ -393,7 +438,7 @@ transform:rotate(0deg);
     <div class="trophy">🏆</div>
     <div>
       <h1>COPA MUNDIAL FIFA 2026</h1>
-      <div class="header-sub">Vamos ARGENTINA!!!</div>
+      <div style="text-align:center;font-family:'Bebas Neue',cursive;font-size:1.1rem;letter-spacing:.25em;color:#74ACDF;text-shadow:0 0 8px rgba(116,172,223,0.8),0 0 20px rgba(116,172,223,0.4);animation:argentina-pulse 1.8s ease-in-out infinite;margin:6px 0;"> VAMOS ARGENTINA...!!!</div>
     </div>
    
  
@@ -418,20 +463,48 @@ transform:rotate(0deg);
 
 <div style="position:sticky;top:0;z-index:299;background:linear-gradient(90deg,#0A1500,#142200,#0A1500);border-bottom:1px solid rgba(100,200,0,0.25);padding:6px 16px;text-align:center;">
 
-<div style="overflow:hidden;height:80px;background:#000;position:relative;border-bottom:1px solid rgba(255,215,0,0.15);">
-  <div id="banner-imgs" style="display:flex;height:100%;align-items:center;animation:slide-banner 20s linear infinite;width:max-content;">
-    <!-- Acá van tus imágenes de sponsors -->
-    <img src="logo_macla.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
-    <img src="bembo.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
-    <img src="antartida.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
-    <img src="union.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
-    <img src="avda.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
-<img src="unioncenter.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
-<img src="pent.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
-<img src="annet.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
-<img src="barzetta.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
-<img src="agustini.png" style="height:70px;margin:0 20px;border-radius:6px;opacity:0.9;">
-<!-- Repetir para que no quede vacío -->
+<div class="banner-pub">
+  <!-- Página 1 -->
+  <div class="banner-pagina activa">
+    <img src="bembo.png" alt="Bembo">
+    <img src="publica.png" alt="Publica">
+    <img src="union.png" alt="Unión">
+    <img src="avda.png" alt="Avda">
+<img src="logo_macla.png" alt="Macla-IA">
+  </div>
+  <!-- Página 2 -->
+  <div class="banner-pagina">
+    <img src="unioncenter.png" alt="Union Center">
+    <img src="publica.png" alt="Publica">
+    <img src="annet.png" alt="An-Net">
+    <img src="barzetta.png" alt="Barzetta">
+<img src="logo_macla.png" alt="Macla-IA">
+  </div>
+  <!-- Página 3 -->
+  <div class="banner-pagina">
+    <img src="agustini.png" alt="Agustini">
+    <img src="redsport.png" alt="Red Sport">
+    <img src="publica.png" alt="Publica">
+<img src="publica.png" alt="Publica">
+    <img src="master.png" alt="Master">
+  </div>
+  <!-- Agregá más páginas de 4 acá -->
+<div class="banner-pagina">
+    <img src="publica.png" alt="Publica">
+    <img src="pent.png" alt="Pent">
+    <img src="publica.png" alt="Publica">
+<img src="ferresanmartin.png" alt="Ferre SanMartin">
+    <img src="publica.png" alt="Publica">
+  </div>
+<div class="banner-pagina">
+    <<img src="publica.png" alt="Publica">
+<img src="mundoanimal.png" alt="Mund Anim">
+<img src="publica.png" alt="Publica">
+<img src="antartida.png" alt="antartida">
+<img src="publica.png" alt="Publica">
+  </div>
+
+</div>
 
   </div>
 </div>
@@ -446,6 +519,24 @@ transform:rotate(0deg);
     <div style="text-align:center;margin-bottom:20px;">
       <div style="font-size:2.5rem">🏆</div><img src="bandera.jfif" style="height:30px;border-radius:3px;animation:flotarBandera 3s ease-in-out infinite;transform-origin:left center;">
       <div style="font-family:'Bebas Neue',cursive;font-size:1.8rem;color:#FFD700;letter-spacing:.1em;">FIXTURE DIGITAL FIFA 2026</div>
+
+<div style="text-align:center;margin:8px 0 4px;">
+  <span style="
+    display:inline-block;
+    font-family:'Bebas Neue',cursive;
+    font-size:1.6rem;
+    letter-spacing:.2em;
+    background:linear-gradient(90deg,#FFD700,#fff,#FFD700,#fff,#FFD700);
+    background-size:300% auto;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    animation:brillo-texto 2s linear infinite;
+  ">✨ TOTALMENTE GRATIS ✨</span>
+</div>
+<div style="text-align:center;font-size:.75rem;color:green;font-weight:700;letter-spacing:.15em;margin-bottom:10px;">
+  FIXTURE DIGITAL · SIN PAPEL 🌿
+</div>
 
 <div style="font-size:.85rem;color:black;margin-top:4px;">Sincronizado por MACLA-IA - Claudio ALDRIAN</div>
 
@@ -558,39 +649,11 @@ VAMOS POR LA 4ta. 🏆 !!!
     <div class="sec-title">🎯 PRONÓSTICO</div>
     <div class="sec-sub">Adiviná los 2 equipos finalistas y el campeón del mundo</div>
 
-
-
     <!-- CARD INSCRIPCION -->
     <div style="background:linear-gradient(135deg,rgba(255,107,53,0.12),rgba(255,215,0,0.08));border:1px solid rgba(255,107,53,0.35);border-radius:16px;padding:16px;margin-bottom:14px;">
-      <div style="font-family:'Bebas Neue',cursive;font-size:1.1rem;color:#FF6B35;letter-spacing:.12em;margin-bottom:4px;">⏰ INSCRIPCIÓN ABIERTA HASTA EL 13 Julio</div>
-      <div style="font-size:.9rem;color:white;line-height:1.5;">Completá tu pronóstico antes de que jueguen los partidos de semis. Solo podés hacer tu pronóstico una vez. Los premios se anuncian próximamente.</div>
-
+      <div style="font-family:'Bebas Neue',cursive;font-size:1.1rem;color:#FF6B35;letter-spacing:.12em;margin-bottom:4px;">⏰ PODRAS PRONOSTICAR DESDE 9 DE JULIO</div>
+      <div style="font-size:.9rem;color:white;line-height:1.5;">Completá tu pronóstico antes de que jueguen los partidos de semis. Solo podés hacer tu pronóstico una vez y recibirás la confirmación con un mens. de whatsapp automático al nº registrado.  Los premios se anuncian próximamente.</div>
     </div>
-
-
-
-<!-- BOTONES DE PREMIOS -->
-<div style="display:flex;gap:10px;margin-bottom:16px;">
-
-  <button onclick="verPremio('finalistas')"
-    style="flex:1;background:linear-gradient(135deg,rgba(0,200,255,0.15),rgba(0,200,255,0.05));
-    border:1px solid rgba(0,200,255,0.4);border-radius:12px;padding:14px 8px;cursor:pointer;
-    color:#00C8FF;font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.1em;
-    display:flex;flex-direction:column;align-items:center;gap:4px;">
-    <span style="font-size:1.8rem">⚽⚽</span>
-    PREMIO<br>FINALISTAS
-  </button>
-
-  <button onclick="verPremio('campeon')"
-    style="flex:1;background:linear-gradient(135deg,rgba(255,215,0,0.15),rgba(255,165,0,0.05));
-    border:1px solid rgba(255,215,0,0.4);border-radius:12px;padding:14px 8px;cursor:pointer;
-    color:#FFD700;font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.1em;
-    display:flex;flex-direction:column;align-items:center;gap:4px;">
-    <span style="font-size:1.8rem">🏆</span>
-    PREMIO<br>CAMPEÓN
-  </button>
-
-</div>
 
 <!-- MODAL PREMIOS -->
 <div id="modal-premio" onclick="cerrarPremio()"
@@ -642,7 +705,7 @@ cursor:pointer;">
 
 <div class="campo-grupo">
  
-<div class="campo-label"style="font-size:10px;color:#00ff66;font-weight:bold;text-shadow:0 0 8px #00ff66;">📱 Número de celular(con 549 y código de área - Solo números)</div>
+<div class="campo-label"style="font-size:10px;color:#00ff66;font-weight:bold;text-shadow:0 0 8px #00ff66;">📱 Número de celular(con 549, código de área y sin 15 - Solo números)</div>
 
   <input class="campo-input" type="tel" id="p-cel" placeholder="Ej: 5493482530384" inputmode="numeric" maxlength="20">
 </div>
@@ -687,7 +750,6 @@ cursor:pointer;">
   </span>
 </div>
 
-
       </div>
     </div>
 
@@ -702,12 +764,33 @@ cursor:pointer;">
     Ver Términos, Condiciones y Política de Privacidad
   </span>
 </div>
-
-</div>
-      
+</div>   
 
     <!-- RESET -->
     <div style="margin-top:30px;border-top:1px solid rgba(255,255,255,0.06);padding-top:20px;">
+
+<!-- BOTONES DE PREMIOS -->
+<div style="display:flex;gap:10px;margin-bottom:16px;">
+
+  <button onclick="verPremio('finalistas')"
+    style="flex:1;background:linear-gradient(135deg,rgba(0,200,255,0.15),rgba(0,200,255,0.05));
+    border:1px solid rgba(0,200,255,0.4);border-radius:12px;padding:14px 8px;cursor:pointer;
+    color:#00C8FF;font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.1em;
+    display:flex;flex-direction:column;align-items:center;gap:4px;">
+    <span style="font-size:1.8rem">⚽⚽</span>
+    PREMIO<br>FINALISTAS
+  </button>
+
+  <button onclick="verPremio('campeon')"
+    style="flex:1;background:linear-gradient(135deg,rgba(255,215,0,0.15),rgba(255,165,0,0.05));
+    border:1px solid rgba(255,215,0,0.4);border-radius:12px;padding:14px 8px;cursor:pointer;
+    color:#FFD700;font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.1em;
+    display:flex;flex-direction:column;align-items:center;gap:4px;">
+    <span style="font-size:1.8rem">🏆</span>
+    PREMIO<br>CAMPEÓN
+  </button>
+</div>
+
       <div style="font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.1em;color:rgba(240,244,255,0.3);margin-bottom:10px;">⚙️ ADMINISTRACIÓN</div>
       <button onclick="resetTodo()" style="background:rgba(255,69,69,0.12);border:1px solid rgba(255,69,69,0.3);color:var(--red);font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;padding:12px;border-radius:10px;cursor:pointer;width:100%;letter-spacing:.05em;">
         🗑️ RESETEAR TODO (volver a cero — borra resultados y pronósticos)
@@ -1023,8 +1106,7 @@ const PARTIDOS=[
   {id:'K5',g:'K',f:'27 Jun',hora:'20:30',h:'Colombia',a:'Portugal',c:'Miami'},
   {id:'K6',g:'K',f:'27 Jun',hora:'20:30',h:'RD Congo',a:'Uzbekistán',c:'Atlanta'},
   {id:'J6',g:'J',f:'27 Jun',hora:'23:00',h:'Argelia',a:'Austria',c:'Kansas'},
-  {id:'J5',g:'J',f:'27 Jun',hora:'23:00',h:'Jordania',a:'Argentina',c:'Dallas'}, 
-  
+  {id:'J5',g:'J',f:'27 Jun',hora:'23:00',h:'Jordania',a:'Argentina',c:'Dallas'},   
 ];
 
 const FECHAS=['11 Jun','12 Jun','13 Jun','14 Jun','15 Jun','16 Jun','17 Jun','18 Jun','19 Jun','20 Jun','21 Jun','22 Jun','23 Jun','24 Jun','25 Jun','26 Jun','27 Jun'];
@@ -1260,12 +1342,12 @@ function renderFixture(){
         :'<span class="ft-vs">VS</span>';
 
       html+='<tr class="'+(j?'jugado':'')+'" onclick="openModal(\''+p.id+'\')">'+
-        '<td class="local">'+
-          '<span class="ft-flag">'+p.h+'&nbsp;'+flagImg(p.h,18)+'</span>'+
+       '<td class="local">'+
+          '<span class="ft-flag">'+flagImg(p.h,22)+' '+p.h+'</span>'+
         '</td>'+
         '<td>'+score+'</td>'+
         '<td class="visit">'+
-          '<span class="ft-flag">'+flagImg(p.a,18)+'&nbsp;'+p.a+'</span>'+
+          '<span class="ft-flag">'+flagImg(p.a,22)+' '+p.a+'</span>'+
         '</td>'+
         '<td class="ft-fecha">'+p.f+'<br>'+( p.hora||'--:--')+'</td>'+
       '</tr>';
@@ -1994,7 +2076,7 @@ function actualizarEstadoPronosticos(){
 
   const ahora = new Date();
 
-  const cierre = new Date('2026-07-08T00:00:00Z');
+  const cierre = new Date('2026-05-13T00:23:59Z');
 
   const abierto = ahora < cierre;
 
@@ -2047,6 +2129,18 @@ if(yaIngreso && yaIngreso.nombre){
   mostrarFranjaBienvenida(yaIngreso.nombre);
 }
 
+// BANNER CARRUSEL
+(function(){
+  const paginas = document.querySelectorAll('.banner-pagina');
+  if(!paginas.length) return;
+  let actual = 0;
+  setInterval(function(){
+    paginas[actual].classList.remove('activa');
+    actual = (actual + 1) % paginas.length;
+    paginas[actual].classList.add('activa');
+  }, 3500);
+})();
+
 </script>
 
 <!-- MODAL TÉRMINOS Y CONDICIONES -->
@@ -2063,10 +2157,17 @@ if(yaIngreso && yaIngreso.nombre){
     <div style="font-size:.75rem;color:rgba(240,244,255,0.75);line-height:1.7;">
 
       <div style="color:var(--gold);font-weight:700;margin-bottom:4px;font-size:.8rem;">⚽ 1. DEL SORTEO</div>
-      <p style="margin-bottom:12px;">El sorteo es organizado por Claudio Aldrian (MACLA-IA) con fines recreativos. La participación es <strong>gratuita</strong>. Se sortea entre quienes aciertan los finalistas y/o el campeón del Mundial FIFA 2026. En caso de empate, el ganador se determina por sorteo aleatorio entre los acertantes mediante <strong>random.org</strong>, en vivo y de forma transparente.</p>
+<p style="margin-bottom:12px;">
+  Se realizarán <strong>dos sorteos independientes</strong>:<br><br>
+  🥈 <strong>SORTEO FINALISTAS:</strong> Entre quienes acertaron los dos equipos finalistas exactos. Se realiza el <strong>19 de julio de 2026</strong>, luego de confirmados los 4 equipos finalistas del mundial FIFA 2026.<br><br>
+  🏆 <strong>SORTEO CAMPEÓN:</strong> Entre quienes acertaron el campeón del mundo. Se realiza el <strong>20 de julio de 2026</strong>, luego de finalizado el partido final.<br><br>
+  En caso de empate en cualquiera de los sorteos, el ganador se determina mediante <strong>random.org</strong> en vivo y de forma transparente.
+</p>
 
-      <div style="color:var(--gold);font-weight:700;margin-bottom:4px;font-size:.8rem;">📅 2. INSCRIPCIÓN Y CIERRE</div>
-      <p style="margin-bottom:12px;">El plazo de inscripción cierra antes del inicio de los cuartos de final del Mundial 2026. Los pronósticos enviados fuera de ese plazo no serán considerados. Una vez enviado el pronóstico <strong>no puede modificarse</strong>.</p>
+<div style="color:var(--gold);font-weight:700;margin-bottom:4px;font-size:.8rem;">📅 2. VOTACION Y CIERRE</div>
+<p style="margin-bottom:12px;">
+  El plazo habilitado para pronosticar ámbos sorteos será desde el <strong>9 de julio de 2026 a las 00:01hs Argentina,</strong>(día de juego del primer partido de cuartos de final); y finaliza el <strong>13 de julio de 2026 a las 23:59hs Argentina,</strong>(comienzo de lo partidos de semifinales). Los pronósticos enviados fuera de ese plazo no serán considerados válidos. Una vez enviado el pronóstico <strong>no puede modificarse</strong>. Como comprobante el sistema enviará un mensaje automático por whatsaap al numero previamente registado, con los detalles  de la información personal y el pronóstico realizado. 
+</p>
 
       <div style="color:var(--gold);font-weight:700;margin-bottom:4px;font-size:.8rem;">👤 3. REQUISITOS</div>
       <p style="margin-bottom:12px;">Pueden participar personas mayores de 18 años. Cada persona puede enviar <strong>un solo pronóstico</strong>. Se identifica por número de DNI. Los datos deben ser reales y válidos. MACLA-IA se reserva el derecho de descalificar participaciones con datos falsos.</p>
@@ -2075,7 +2176,7 @@ if(yaIngreso && yaIngreso.nombre){
       <p style="margin-bottom:12px;">Los premios se anuncian en la sección de Pronósticos de esta aplicación. La entrega se coordina por WhatsApp con el ganador dentro de los 7 días posteriores a la final del Mundial. Los premios no son canjeables por dinero ni transferibles.</p>
 
       <div style="color:var(--gold);font-weight:700;margin-bottom:4px;font-size:.8rem;">📢 5. SORTEO PÚBLICO</div>
-      <p style="margin-bottom:12px;">El resultado del sorteo se comunica por WhatsApp al ganador y se publica en las redes sociales de MACLA-IA. La fecha del sorteo es el <strong>20 de julio de 2026</strong>.</p>
+      <p style="margin-bottom:12px;">El resultado de los sorteos se comunicará por WhatsApp al ganador y se publica en las redes sociales de MACLA-IA.</p>
 
       <hr style="border-color:rgba(255,255,255,0.08);margin:16px 0;">
 
