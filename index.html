@@ -409,7 +409,7 @@ transform:rotate(0deg);
   width:100%;
   justify-content:center;
   align-items:center;
-  gap:16px;
+  gap:6px;
   animation:fade-banner .5s ease;
 }
 .banner-pagina.activa{display:flex;}
@@ -419,7 +419,7 @@ transform:rotate(0deg);
 }
 .banner-pagina img{
   height:62px;
-  width:auto;
+  width:100px;
   object-fit:contain;
   border-radius:6px;
   background:transparent;
@@ -488,7 +488,7 @@ transform:rotate(0deg);
   <!-- Agregá más páginas de 4 acá -->
 <div class="banner-pagina">
     <img src="pent.png" alt="Pent">
-    <img src="publica.png" alt="Publica">
+    <img src="lamarisa.png" alt="La Marisa">
 <img src="ferresanmartin.png" alt="Ferre SanMartin">
     <img src="publica.png" alt="Publica">
   </div>
@@ -631,6 +631,50 @@ VAMOS POR LA 4ta. 🏆 !!!
       <div class="info-full-val">48 equipos · Ronda de 16</div>
       <div class="info-full-sub">Pasan: 1° y 2° de cada grupo + 8 mejores 3eros → 16avos de final → 8tavos → Cuartos → Semis → Final</div>
     </div>
+
+<!-- SECCIÓN ECO -->
+<div style="background:linear-gradient(135deg,rgba(0,230,118,0.08),rgba(0,200,80,0.04));border:1px solid rgba(0,230,118,0.25);border-radius:14px;padding:18px;margin-bottom:12px;">
+  <div style="font-family:'Bebas Neue',cursive;font-size:1.3rem;color:#00E676;letter-spacing:.12em;margin-bottom:8px;">♻️ ¿QUÉ ES EL FIXTURE DIGITAL SIN PAPEL?</div>
+  <p style="font-size:.78rem;color:rgba(240,244,255,0.75);line-height:1.7;margin-bottom:10px;">
+    Es una plataforma 100% digital creada por <strong style="color:#00E676;">MACLA-IA · Claudio Aldrian</strong> para seguir el Mundial FIFA 2026 sin usar papel.<br><br>
+    En lugar de imprimir el fixture tradicional — que se pierde, se moja o se rompe — cada persona lo tiene en su celular, siempre actualizado, con resultados en tiempo real.
+  </p>
+  <div style="font-family:'Bebas Neue',cursive;font-size:.85rem;color:#00E676;letter-spacing:.1em;margin-bottom:6px;">🌿 ¿POR QUÉ SIN PAPEL?</div>
+  <p style="font-size:.75rem;color:rgba(240,244,255,0.65);line-height:1.7;margin-bottom:10px;">
+    Cada fixture impreso usa recursos naturales innecesariamente. Al compartir este link, miles de personas evitan imprimir, ayudando a reducir el consumo de papel y el impacto ambiental.
+  </p>
+  <div style="font-family:'Bebas Neue',cursive;font-size:.85rem;color:#00E676;letter-spacing:.1em;margin-bottom:6px;">📱 ¿CÓMO FUNCIONA?</div>
+  <div style="font-size:.75rem;color:rgba(240,244,255,0.65);line-height:1.9;">
+    ⚽ Abrís el link desde cualquier celular o computadora<br>
+    📊 Cargás los resultados de cada partido<br>
+    🏅 Seguís posiciones y llaves eliminatorias<br>
+    🎯 Participás del sorteo con tu pronóstico<br>
+    ✅ Todo gratis, sin instalar nada
+  </div>
+  <div style="margin-top:12px;font-size:.7rem;color:#00E676;font-style:italic;text-align:center;letter-spacing:.05em;">
+    🌿 Compartí el link · No uses papel · Cuidamos el planeta juntos
+  </div>
+</div>
+
+
+<!-- QR CODE -->
+<div style="background:var(--glass);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:18px;text-align:center;margin-bottom:12px;">
+  <div style="font-family:'Bebas Neue',cursive;font-size:1.1rem;color:var(--gold);letter-spacing:.12em;margin-bottom:4px;">📲 COMPARTÍ EL FIXTURE</div>
+  <div style="font-size:.65rem;color:rgba(240,244,255,0.4);letter-spacing:.1em;margin-bottom:14px;">Escaneá el QR o compartí el link</div>
+  <div style="display:flex;justify-content:center;margin-bottom:12px;">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://fixtu2026macla.vercel.app&bgcolor=050A14&color=FFD700&margin=10"
+      style="width:160px;height:160px;border-radius:10px;border:2px solid rgba(255,215,0,0.3);"
+      alt="QR Fixture Mundial 2026">
+  </div>
+  <div style="font-size:.7rem;color:var(--accent);letter-spacing:.05em;margin-bottom:8px;">
+    🌐 fixtu2026macla.vercel.app
+  </div>
+  <button onclick="compartirFixture()" style="background:linear-gradient(135deg,var(--gold2),var(--gold));color:#000;font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.12em;padding:10px 24px;border:none;border-radius:10px;cursor:pointer;">
+    📤 COMPARTIR LINK
+  </button>
+</div>
+
+
     <div class="pub-bottom">
       <div>
         <div class="pub-bottom-nombre">FIXTURE DIGITAL · SIN PAPEL 🌿</div>
@@ -646,7 +690,7 @@ VAMOS POR LA 4ta. 🏆 !!!
 
     <!-- CARD INSCRIPCION -->
     <div style="background:linear-gradient(135deg,rgba(255,107,53,0.12),rgba(255,215,0,0.08));border:1px solid rgba(255,107,53,0.35);border-radius:16px;padding:16px;margin-bottom:14px;">
-      <div style="font-family:'Bebas Neue',cursive;font-size:1.1rem;color:#FF6B35;letter-spacing:.12em;margin-bottom:4px;">⏰ PODRAS PRONOSTICAR DESDE 9 DE JULIO</div>
+      <div style="font-family:'Bebas Neue',cursive;font-size:1.1rem;color:#FF6B35;letter-spacing:.12em;margin-bottom:4px;">⏰ PODRAS PRONOSTICAR DESDE 9 DE JULIO DE 2026</div>
       <div style="font-size:.9rem;color:white;line-height:1.5;">Completá tu pronóstico antes de que jueguen los partidos de semis. Solo podés hacer tu pronóstico una vez y recibirás la confirmación con un mens. de whatsapp automático al nº registrado.  Los premios se anuncian próximamente.</div>
     </div>
 
@@ -700,7 +744,7 @@ cursor:pointer;">
 
 <div class="campo-grupo">
  
-<div class="campo-label"style="font-size:10px;color:#00ff66;font-weight:bold;text-shadow:0 0 8px #00ff66;">📱 Número de celular(con 549, código de área y sin 15 - Solo números)</div>
+<div class="campo-label"style="font-size:10px;color:#00ff66;font-weight:bold;text-shadow:0 0 8px #00ff66;">📱 Número de celular(con 549, código de área y el numero sin 15)</div>
 
   <input class="campo-input" type="tel" id="p-cel" placeholder="Ej: 5493482530384" inputmode="numeric" maxlength="20">
 </div>
@@ -728,22 +772,18 @@ cursor:pointer;">
 </div>          
 
         </div>
-
+<div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;background:rgba(255,255,255,0.04);border-radius:10px;padding:10px;">
+  <input type="checkbox" id="acepto-terminos" style="width:20px;height:20px;margin-top:2px;cursor:pointer;accent-color:var(--gold);flex-shrink:0;">
+  <label for="acepto-terminos" style="font-size:.7rem;color:rgba(240,244,255,0.6);cursor:pointer;line-height:1.5;">
+    Acepto los 
+    <span onclick="abrirTerminos()" style="color:var(--gold);text-decoration:underline;">Términos y Condiciones</span>
+    y la 
+    <span onclick="abrirTerminos()" style="color:var(--gold);text-decoration:underline;">Política de Privacidad</span>
+  </label>
+</div>
         <button id="btn-pronostico" onclick="guardarPronostico()" style="background:linear-gradient(135deg,#FF6B35,#FF9500);color:#000;font-family:'Bebas Neue',cursive;font-size:1.2rem;letter-spacing:.15em;padding:16px;border:none;border-radius:12px;cursor:pointer;margin-top:6px;width:100%;">
           🎯 ENVIAR MI PRONÓSTICO
         </button>
-
-
-<div style="text-align:center;margin-top:10px;font-size:.62rem;color:rgba(240,244,255,0.4);">
-  Al participar aceptás los
-  <span onclick="abrirTerminos()" style="color:var(--gold);cursor:pointer;text-decoration:underline;">
-    Términos y Condiciones
-  </span>
-  y la
-  <span onclick="abrirTerminos()" style="color:var(--gold);cursor:pointer;text-decoration:underline;">
-    Política de Privacidad
-  </span>
-</div>
 
       </div>
     </div>
@@ -1899,6 +1939,11 @@ if(!nombre||!dni||!ciudad||!celular){
   return;
 }
 
+if(!document.getElementById('acepto-terminos').checked){
+  showToast('⚠️ Debés aceptar los Términos y Condiciones');
+  return;
+}
+
 if(!s1||!s2||!s3){
   showToast('⚠️ Elegí los 2 finalistas y el campeón');
   return;
@@ -2047,11 +2092,11 @@ document.getElementById('form-pronostico').style.display='block';
 const PREMIOS = {
   finalistas: {
     titulo: '🏅 PREMIO — ADIVINAR LOS DOS FINALISTAS',
-    img: 'https://TU-URL-FOTO-PREMIO-FINALISTAS.jpg'
+    img: 'premiofinalistas.png'
   },
   campeon: {
     titulo: '🏆 PREMIO — ADIVINAR EL CAMPEÓN',
-    img: 'https://TU-URL-FOTO-PREMIO-CAMPEON.jpg'
+    img: 'premiocampeon.png'
   }
 };
 
@@ -2108,6 +2153,21 @@ function abrirTerminos(){
 function cerrarTerminos(){
   document.getElementById('modal-terminos').style.display='none';
   document.body.style.overflow='';
+}
+
+function compartirFixture(){
+  const url = 'https://fixtu2026macla.vercel.app';
+  if(navigator.share){
+    navigator.share({
+      title: 'Fixture Digital Mundial 2026',
+      text: '⚽ Seguí el Mundial 2026 sin papel! Cargá resultados, votá tu pronóstico y ganá premios. GRATIS 🏆',
+      url: url
+    });
+  } else {
+    navigator.clipboard.writeText(url).then(function(){
+      showToast('✅ Link copiado al portapapeles!');
+    });
+  }
 }
 
 // ============================================================
